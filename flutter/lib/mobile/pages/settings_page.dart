@@ -517,13 +517,7 @@ class _SettingsState extends State<SettingsPage> with WidgetsBindingObserver {
           0,
           SettingsTile.switchTile(
               initialValue: _ignoreBatteryOpt,
-              title: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(translate('Keep RustDesk background service')),
-                    Text('* ${translate('Ignore Battery Optimizations')}',
-                        style: Theme.of(context).textTheme.bodySmall),
-                  ]),
+              title: Text(translate('Keep My RD background service')),
               onToggle: (v) async {
                 if (v) {
                   await AndroidPermissionManager.request(
@@ -1018,7 +1012,7 @@ void showThemeSettings(OverlayDialogManager dialogManager) async {
 void showAbout(OverlayDialogManager dialogManager) {
   dialogManager.show((setState, close, context) {
     return CustomAlertDialog(
-      title: Text(translate('About RustDesk')),
+      title: Text(translate('About My RD')),
       content: Wrap(direction: Axis.vertical, spacing: 12, children: [
         Text('Version: $version'),
         InkWell(
